@@ -16,4 +16,12 @@ public class Quadrilateral extends Square{
     public double getArea() {
         return base * getSide();
     }
+
+    public Quadrilateral(double side, double base) {
+        super(side);
+        this.base = base;
+    }
+
+    public Quadrilateral() {
+    }
 }

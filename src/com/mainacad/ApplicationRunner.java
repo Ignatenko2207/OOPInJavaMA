@@ -1,29 +1,35 @@
 package com.mainacad;
 
-import com.mainacad.model.AbstractShape;
-import com.mainacad.model.Circle;
-import com.mainacad.model.Square;
-import com.mainacad.model.Triangle;
+import com.mainacad.model.*;
 
 public class ApplicationRunner {
 
     public static void main(String[] args) {
 
-        Circle circle1 = new Circle();
-
-        circle1.setRadius(10);
-
-        System.out.println("Circle with radius " + circle1.getRadius() + " has area " + circle1.getArea());
-
-        Square square = new Square();
-
-        square.setSide(15);
-
-        System.out.println("Square with side " + square.getSide() + " has area " + square.getArea());
-
-        Object triangle = new Triangle(12, 15);
-        AbstractShape triangleNew = new Triangle();
+        Circle circle = new Circle(10);
 
 
+        Square square = new Square(15);
+
+
+        Triangle triangle = new Triangle(12, 15);
+
+        Shape maxShape;
+
+        if (circle.getArea() > square.getArea()) {
+            maxShape = circle;
+        }
+        else if(circle.getArea() < square.getArea()){
+            maxShape = square;
+        }
+        else {
+            maxShape = square;
+        }
+
+        if (maxShape.getArea() < triangle.getArea()){
+            maxShape = triangle;
+        }
+
+        System.out.println("Max shape has area " + maxShape.getArea());
     }
 }
