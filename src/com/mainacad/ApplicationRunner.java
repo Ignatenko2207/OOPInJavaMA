@@ -14,7 +14,7 @@ public class ApplicationRunner {
 
         Triangle triangle = new Triangle(12, 15);
 
-        Quadrilateral quadrilateral = new Quadrilateral(10,20);
+        Quadrilateral quadrilateral = new Quadrilateral(100,200);
 
         Shape maxShape;
 
@@ -33,6 +33,6 @@ public class ApplicationRunner {
             maxShape = quadrilateral;
         }
 
-        System.out.println("Max shape has area " + maxShape.getArea());
+        System.out.println("Max shape is " + maxShape.getClass().getSimpleName() + " and has area " + maxShape.getArea());
     }
 }
